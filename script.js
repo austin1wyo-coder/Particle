@@ -1,4 +1,9 @@
+const sound = document.getElementById("clickSound");
+
 document.addEventListener("click", function(e) {
+
+    sound.currentTime = 0;
+    sound.play();
 
     for (let i = 0; i < 20; i++) {
 
@@ -8,7 +13,6 @@ document.addEventListener("click", function(e) {
         particle.style.left = e.clientX + "px";
         particle.style.top = e.clientY + "px";
 
-        // arah acak
         const x = (Math.random() - 0.5) * 200;
         const y = (Math.random() - 0.5) * 200;
 
@@ -21,4 +25,5 @@ document.addEventListener("click", function(e) {
             particle.remove();
         });
     }
+
 });
